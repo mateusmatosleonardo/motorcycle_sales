@@ -7,7 +7,14 @@ interface ContainerProps {
 }
 
 function Container({children}: ContainerProps) {
-  return <Main style={{backgroundColor: theme.colors.white}}>{children}</Main>;
+  return (
+    <Main
+      showsVerticalScrollIndicator={false}
+      overScrollMode="never"
+      style={{backgroundColor: theme.colors.white}}>
+      {children}
+    </Main>
+  );
 }
 
 export default Container;
