@@ -1,19 +1,27 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+    "motos": [
+        {
+            "id": 1,
+            "name": "Biz 125",
+            "brand": "Honda",
+            "cc": "124,9",
+            "price": "R$ 12.730",
+            "picture": "../assets/biz.png"
+        },
+        {
+            "id": 2,
+            "name": "Pop 100",
+            "brand": "Honda",
+            "cc": "109,1",
+            "price": "R$ 8.330"
+        },
+       
+        {
+            "id": 3,
+            "name": "CG 160 Titan",
+            "brand": "Honda",
+            "cc": "162,7",
+            "price": "R$ 14.620"
+        }
+    ]
 }

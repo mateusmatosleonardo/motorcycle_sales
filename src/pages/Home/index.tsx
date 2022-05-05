@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import {Text, View, Animated, Easing, Platform} from 'react-native';
-import {theme} from '../../styles/theme';
 import {Logo, Main} from './styles';
 import LogoApp from '../../assets/logoMoto.png';
 
