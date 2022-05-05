@@ -23,12 +23,7 @@ export const ContainerInputs = styled.View`
   margin-top: 80px;
 `;
 
-export const InputArea = styled.View`
-  width: 100%;
-  height: 48px;
-  border-radius: 4px;
-  margin-top: 10px;
-`;
+export const InputArea = styled.View``;
 
 export const TitleInput = styled.Text`
   color: #414040;
@@ -36,5 +31,10 @@ export const TitleInput = styled.Text`
 
 export const ContainerError = styled.View`
   width: 100%;
-  height: 15px;
+  height: 25px;
+`;
+
+export const TextError = styled.Text`
+  font-size: 12px;
+  color: #f00;
 `;
