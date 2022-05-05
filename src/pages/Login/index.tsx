@@ -12,13 +12,19 @@ import {
 } from './styles';
 import LogoApp from '../../assets/logoMoto.png';
 import Input from '../../components/Input';
-import {StyleSheet} from 'react-native';
+import {
+  StyleSheet,
+  ActivityIndicator,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
 import {theme} from '../../styles/theme';
 import {useForm, Controller} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {useNavigation} from '@react-navigation/native';
 import {NavigationProp} from '@react-navigation/native';
 import {RootStackParamList} from '../../routes';
+import Icon from 'react-native-vector-icons/Ionicons';
 import * as yup from 'yup';
 import Button from '../../components/Button';
 
@@ -27,16 +33,16 @@ type LoginScreenProps = NavigationProp<RootStackParamList, 'Home'>;
 const Login: React.FC = () => {
   const navigation = useNavigation<LoginScreenProps>();
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [hidePass, setHidePass] = React.useState<boolean>(true);
+  const [error, setError] = React.useState<string>('');
   const validateSchema = yup.object({
     email: yup.string().email('E-mail inválido').required('Informe seu email!'),
-    password: yup
-      .string()
-      .min(8, 'A senha deve conter no mínimo 8 caracteres!')
-      .required('Informe sua senha!'),
+    password: yup.string().required('Informe sua senha!'),
   });
   const {
     control,
     handleSubmit,
+    setValue,
     formState: {errors},
   } = useForm({
     resolver: yupResolver(validateSchema),
@@ -45,12 +51,14 @@ const Login: React.FC = () => {
   function handleSignIn(data: any) {
     if (data.email === 'me2@test.com' && data.password === '87654321') {
       setIsLoading(true);
-      setInterval(() => {
+      setTimeout(() => {
         setIsLoading(false);
         navigation.navigate('Home');
+        setValue('email', '', {shouldValidate: true});
+        setValue('password', '', {shouldValidate: true});
       }, 1200);
     } else {
-      console.log('Erro ao logar!');
+      setError('E-mail ou senha inválidos!');
     }
   }
 
@@ -105,7 +113,19 @@ const Login: React.FC = () => {
                   onBlur={onBlur}
                   value={value}
                   styleInput={{color: theme.colors.black, paddingLeft: 10}}
+                  secureText={hidePass}
                 />
+
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  onPress={() => setHidePass(!hidePass)}
+                  style={{position: 'absolute', right: 10, top: 13}}>
+                  <Icon
+                    name={hidePass ? 'eye-outline' : 'eye-off-outline'}
+                    color={theme.colors.black}
+                    size={22}
+                  />
+                </TouchableOpacity>
               </InputArea>
             )}
           />
@@ -116,15 +136,26 @@ const Login: React.FC = () => {
           </ContainerError>
         </ContainerInputs>
         <Button
+          textBtn={
+            isLoading ? (
+              <ActivityIndicator color={theme.colors.white} size="small" />
+            ) : (
+              'Login'
+            )
+          }
           action={handleSubmit(handleSignIn)}
           style={{
+            justifyContent: 'center',
+            alignItems: 'center',
             width: '100%',
             height: 48,
             backgroundColor: theme.colors.green,
             marginTop: 25,
             borderRadius: 4,
           }}
+          styleText={{color: theme.colors.white, fontSize: 16}}
         />
+        <Text style={{color: '#f00', marginTop: 10}}>{error}</Text>
       </Main>
     </Container>
   );

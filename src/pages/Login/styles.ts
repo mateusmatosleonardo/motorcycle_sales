@@ -20,18 +20,19 @@ export const Logo = styled.Image`
 
 export const ContainerInputs = styled.View`
   width: 100%;
-  margin-top: 80px;
+  margin-top: 150px;
 `;
 
 export const InputArea = styled.View``;
 
 export const TitleInput = styled.Text`
+  font-size: 13px;
   color: #414040;
 `;
 
 export const ContainerError = styled.View`
   width: 100%;
-  height: 25px;
+  height: 22px;
 `;
 
 export const TextError = styled.Text`
