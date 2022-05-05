@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Text, View, Animated, Easing} from 'react-native';
+import {Text, View, Animated, Easing, Platform} from 'react-native';
 import {theme} from '../../styles/theme';
 import {Logo, Main} from './styles';
 import LogoApp from '../../assets/logoMoto.png';
@@ -53,7 +53,7 @@ const Home = () => {
       </Animated.View>
     </View>
   ) : (
-    <Main>
+    <Main style={[Platform.OS ? {paddingTop: 60} : {}]}>
       <Text style={{color: '#222'}}>Home</Text>
     </Main>
   );
