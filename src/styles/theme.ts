@@ -5,6 +5,8 @@ export const theme = {
     black: '#414040',
     blackLight: '#595959',
     redAlert: '#ff375b',
+    gray: '#ccc',
+    green: '#54B175',
   },
   fonts: {
     RobotoRegular: 'Roboto-Regular',
