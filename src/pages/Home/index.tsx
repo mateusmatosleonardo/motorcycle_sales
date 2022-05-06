@@ -1,9 +1,12 @@
 import React, {useEffect} from 'react';
 import {Text, View, Animated, Easing, Platform} from 'react-native';
 import {Logo, Main} from './styles';
+
 import LogoApp from '../../assets/logoMoto.png';
+import {api} from '../../utils/api';
 
 const Home = () => {
+  const [motorcycle, setMotorcycle] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
   const floatAnim = React.useRef(new Animated.Value(0)).current;
   const moveUp = React.useCallback(() => {
@@ -23,6 +26,15 @@ const Home = () => {
     }).start();
   }, [floatAnim]);
 
+  const getData = React.useCallback(() => {
+    api
+      .get('/motos')
+      .then(({data}) => {
+        setMotorcycle(data);
+      })
+      .catch(err => console.log(err + 'Erro ao buscar dados'));
+  }, []);
+
   useEffect(() => {
     moveUp();
     floatAnim.addListener(({value}) => {
@@ -34,13 +46,19 @@ const Home = () => {
     });
   }, [floatAnim, moveUp, moveDown]);
 
+  useEffect(() => {
+    getData();
+  }, [getData]);
+
   function duration() {
     setTimeout(() => {
       setIsLoading(false);
-    }, 4000);
+    }, 3000);
   }
 
   duration();
+
+  console.log(motorcycle, 'data aqui');
 
   return isLoading ? (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
@@ -52,7 +70,7 @@ const Home = () => {
       </Animated.View>
     </View>
   ) : (
-    <Main style={[Platform.OS ? {paddingTop: 60} : {}]}>
+    <Main style={[Platform.OS === 'ios' ? {paddingTop: 50} : {}]}>
       <Text style={{color: '#222'}}>Home</Text>
     </Main>
   );
