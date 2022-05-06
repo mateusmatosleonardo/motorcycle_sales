@@ -1,11 +1,33 @@
 import React, {useEffect} from 'react';
-import {View, Animated, Easing, Platform, Dimensions} from 'react-native';
-import {Header, Logo, Main} from './styles';
+import {
+  View,
+  Animated,
+  Easing,
+  Platform,
+  Dimensions,
+  StyleSheet,
+  Image,
+  Text,
+} from 'react-native';
+import {
+  BgMoto,
+  Cc,
+  Header,
+  ListCard,
+  Logo,
+  Main,
+  NameMoto,
+  Price,
+} from './styles';
 
 import LogoApp from '../../assets/logoMoto.png';
+import Biz from '../../assets/biz.png';
 import {api} from '../../utils/api';
 import SearchBar from '../../components/SearchBar';
+import Button from '../../components/Button';
 import {theme} from '../../styles/theme';
+import Card from '../../components/Card';
+import Right from 'react-native-vector-icons/AntDesign';
 const {height} = Dimensions.get('window');
 
 const Home = () => {
@@ -29,14 +51,14 @@ const Home = () => {
     }).start();
   }, [floatAnim]);
 
-  // const getData = React.useCallback(() => {
-  //   api
-  //     .get('/motos')
-  //     .then(({data}) => {
-  //       setMotorcycle(data);
-  //     })
-  //     .catch(err => console.log(err + 'Erro ao buscar dados'));
-  // }, []);
+  const getData = React.useCallback(() => {
+    api
+      .get('/motos')
+      .then(({data}) => {
+        setMotorcycle(data);
+      })
+      .catch(err => console.log(err + 'Erro ao buscar dados'));
+  }, []);
 
   useEffect(() => {
     moveUp();
@@ -49,9 +71,9 @@ const Home = () => {
     });
   }, [floatAnim, moveUp, moveDown]);
 
-  // useEffect(() => {
-  //   getData();
-  // }, [getData]);
+  useEffect(() => {
+    getData();
+  }, [getData]);
 
   function duration() {
     setTimeout(() => {
@@ -62,7 +84,13 @@ const Home = () => {
   duration();
 
   return isLoading ? (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: theme.colors.white,
+      }}>
       <Animated.View
         style={{
           translateY: floatAnim,
@@ -89,105 +117,67 @@ const Home = () => {
         overScrollMode="never"
         contentContainerStyle={{alignItems: 'center'}}
         style={[Platform.OS === 'ios' ? {paddingTop: 50} : {}]}>
-        <View
-          style={{
-            width: '100%',
-            height: 80,
-            marginBottom: 30,
-            backgroundColor: theme.colors.green,
-          }}
-        />
-        <View
-          style={{
-            width: '100%',
-            height: 80,
-            marginBottom: 30,
-            backgroundColor: theme.colors.green,
-          }}
-        />
-        <View
-          style={{
-            width: '100%',
-            height: 80,
-            marginBottom: 30,
-            backgroundColor: theme.colors.green,
-          }}
-        />
-        <View
-          style={{
-            width: '100%',
-            height: 80,
-            marginBottom: 30,
-            backgroundColor: theme.colors.green,
-          }}
-        />
-        <View
-          style={{
-            width: '100%',
-            height: 80,
-            marginBottom: 30,
-            backgroundColor: theme.colors.green,
-          }}
-        />
-        <View
-          style={{
-            width: '100%',
-            height: 80,
-            marginBottom: 30,
-            backgroundColor: theme.colors.green,
-          }}
-        />
-        <View
-          style={{
-            width: '100%',
-            height: 80,
-            marginBottom: 30,
-            backgroundColor: theme.colors.green,
-          }}
-        />
-        <View
-          style={{
-            width: '100%',
-            height: 80,
-            marginBottom: 30,
-            backgroundColor: theme.colors.green,
-          }}
-        />
-        <View
-          style={{
-            width: '100%',
-            height: 80,
-            marginBottom: 30,
-            backgroundColor: theme.colors.green,
-          }}
-        />
-        <View
-          style={{
-            width: '100%',
-            height: 80,
-            marginBottom: 30,
-            backgroundColor: theme.colors.green,
-          }}
-        />
-        <View
-          style={{
-            width: '100%',
-            height: 80,
-            marginBottom: 30,
-            backgroundColor: theme.colors.green,
-          }}
-        />
-        <View
-          style={{
-            width: '100%',
-            height: 80,
-            marginBottom: 30,
-            backgroundColor: theme.colors.green,
-          }}
-        />
+        <ListCard>
+          <Card style={styles.cardStyle}>
+            <BgMoto>
+              <Image source={Biz} style={{width: 110, height: 94}} />
+            </BgMoto>
+            <NameMoto>Honda Biz 125</NameMoto>
+            <Cc>124.9 cc</Cc>
+            <Text
+              style={{
+                color: theme.colors.black,
+                fontSize: 10,
+                marginTop: 8,
+              }}>
+              A partir de
+            </Text>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}>
+              <Price>R$ 12.730</Price>
+              <Button
+                style={{
+                  width: 46,
+                  height: 26,
+                  backgroundColor: theme.colors.green,
+                  borderRadius: 8,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                textBtn={
+                  <Right name="right" size={16} color={theme.colors.white} />
+                }
+              />
+            </View>
+          </Card>
+          <Card style={styles.cardStyle} />
+          <Card style={styles.cardStyle} />
+          <Card style={styles.cardStyle} />
+          <Card style={styles.cardStyle} />
+          <Card style={styles.cardStyle} />
+          <Card style={styles.cardStyle} />
+        </ListCard>
       </Main>
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  cardStyle: {
+    width: '100%',
+    maxWidth: 165,
+    height: 208,
+    marginBottom: 20,
+    backgroundColor: theme.colors.white,
+    elevation: 1.5,
+    borderRadius: 10,
+    paddingHorizontal: 5,
+    paddingVertical: 5,
+  },
+});
 
 export default Home;

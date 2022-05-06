@@ -3,9 +3,9 @@ import {Text, TouchableOpacity} from 'react-native';
 
 interface ButtonProps {
   action?: () => void;
-  style?: any;
-  textBtn?: any;
-  styleText?: any;
+  style?: {} | Array<{}>;
+  textBtn?: string | any;
+  styleText?: {} | Array<{}>;
 }
 
 const Button = ({action, style, textBtn, styleText}: ButtonProps) => {
