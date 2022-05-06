@@ -1,9 +1,11 @@
 import React, {useEffect} from 'react';
-import {Text, View, Animated, Easing, Platform} from 'react-native';
+import {View, Animated, Easing, Platform} from 'react-native';
 import {Logo, Main} from './styles';
 
 import LogoApp from '../../assets/logoMoto.png';
 import {api} from '../../utils/api';
+import SearchBar from '../../components/SearchBar';
+import {theme} from '../../styles/theme';
 
 const Home = () => {
   const [motorcycle, setMotorcycle] = React.useState([]);
@@ -71,7 +73,10 @@ const Home = () => {
     </View>
   ) : (
     <Main style={[Platform.OS === 'ios' ? {paddingTop: 50} : {}]}>
-      <Text style={{color: '#222'}}>Home</Text>
+      <SearchBar
+        styleIcon={{color: theme.colors.black}}
+        styleInput={{color: theme.colors.black}}
+      />
     </Main>
   );
 };
