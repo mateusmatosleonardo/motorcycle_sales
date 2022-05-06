@@ -14,7 +14,7 @@ const Home = () => {
   const floatAnim = React.useRef(new Animated.Value(0)).current;
   const moveUp = React.useCallback(() => {
     Animated.timing(floatAnim, {
-      toValue: -10,
+      toValue: -8,
       duration: 500,
       easing: Easing.linear,
       useNativeDriver: true,
@@ -29,29 +29,29 @@ const Home = () => {
     }).start();
   }, [floatAnim]);
 
-  const getData = React.useCallback(() => {
-    api
-      .get('/motos')
-      .then(({data}) => {
-        setMotorcycle(data);
-      })
-      .catch(err => console.log(err + 'Erro ao buscar dados'));
-  }, []);
+  // const getData = React.useCallback(() => {
+  //   api
+  //     .get('/motos')
+  //     .then(({data}) => {
+  //       setMotorcycle(data);
+  //     })
+  //     .catch(err => console.log(err + 'Erro ao buscar dados'));
+  // }, []);
 
   useEffect(() => {
     moveUp();
     floatAnim.addListener(({value}) => {
       if (value === 0) {
         moveUp();
-      } else if (value === -10) {
+      } else if (value === -8) {
         moveDown();
       }
     });
   }, [floatAnim, moveUp, moveDown]);
 
-  useEffect(() => {
-    getData();
-  }, [getData]);
+  // useEffect(() => {
+  //   getData();
+  // }, [getData]);
 
   function duration() {
     setTimeout(() => {
@@ -60,8 +60,6 @@ const Home = () => {
   }
 
   duration();
-
-  console.log(motorcycle, 'data aqui');
 
   return isLoading ? (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
