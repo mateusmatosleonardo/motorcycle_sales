@@ -22,6 +22,8 @@ import {
 
 import LogoApp from '../../assets/logoMoto.png';
 import Biz from '../../assets/biz.png';
+import Pop from '../../assets/pop.png';
+import Cg from '../../assets/cg.png';
 import {api} from '../../utils/api';
 import SearchBar from '../../components/SearchBar';
 import Button from '../../components/Button';
@@ -83,6 +85,8 @@ const Home = () => {
 
   duration();
 
+  console.log(motorcycle);
+
   return isLoading ? (
     <View
       style={{
@@ -118,48 +122,63 @@ const Home = () => {
         contentContainerStyle={{alignItems: 'center'}}
         style={[Platform.OS === 'ios' ? {paddingTop: 50} : {}]}>
         <ListCard>
-          <Card style={styles.cardStyle}>
-            <BgMoto>
-              <Image source={Biz} style={{width: 110, height: 94}} />
-            </BgMoto>
-            <NameMoto>Honda Biz 125</NameMoto>
-            <Cc>124.9 cc</Cc>
-            <Text
-              style={{
-                color: theme.colors.black,
-                fontSize: 10,
-                marginTop: 8,
-              }}>
-              A partir de
-            </Text>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}>
-              <Price>R$ 12.730</Price>
-              <Button
-                style={{
-                  width: 46,
-                  height: 26,
-                  backgroundColor: theme.colors.green,
-                  borderRadius: 8,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-                textBtn={
-                  <Right name="right" size={16} color={theme.colors.white} />
-                }
-              />
-            </View>
-          </Card>
-          <Card style={styles.cardStyle} />
-          <Card style={styles.cardStyle} />
-          <Card style={styles.cardStyle} />
-          <Card style={styles.cardStyle} />
-          <Card style={styles.cardStyle} />
-          <Card style={styles.cardStyle} />
+          {motorcycle.map(
+            (
+              item: {
+                id: number;
+                name: string;
+                cc: string;
+                price: string;
+                picture: string;
+              },
+              index,
+            ) => (
+              <Card key={index} style={styles.cardStyle}>
+                <BgMoto>
+                  <Image
+                    source={{uri: item.picture}}
+                    style={{width: 135, height: 94}}
+                    resizeMode="contain"
+                  />
+                </BgMoto>
+                <NameMoto>{item.name}</NameMoto>
+                <Cc>{item.cc}</Cc>
+                <Text
+                  style={{
+                    color: theme.colors.black,
+                    fontSize: 10,
+                    marginTop: 8,
+                  }}>
+                  A partir de
+                </Text>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                  }}>
+                  <Price>R$ 12.730</Price>
+                  <Button
+                    style={{
+                      width: 46,
+                      height: 28,
+                      backgroundColor: theme.colors.green,
+                      borderRadius: 8,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                    textBtn={
+                      <Right
+                        name="right"
+                        size={16}
+                        color={theme.colors.white}
+                      />
+                    }
+                  />
+                </View>
+              </Card>
+            ),
+          )}
         </ListCard>
       </Main>
     </>
