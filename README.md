@@ -69,6 +69,5 @@ suba o servidor do json-server com o seguindo script:
  <br>
  senha: 87654321
 
-
-
-
+## Passo - 7 (Introdução ao app)
+tudo pronto para usar! o app lista uma coleção de motos com dados reais, contendo tela de login, tela de listagem de motos, tela de detalhes e simulaçao de compra.
