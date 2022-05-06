@@ -1,11 +1,12 @@
 import React, {useEffect} from 'react';
-import {View, Animated, Easing, Platform} from 'react-native';
-import {Logo, Main} from './styles';
+import {View, Animated, Easing, Platform, Dimensions} from 'react-native';
+import {Header, Logo, Main} from './styles';
 
 import LogoApp from '../../assets/logoMoto.png';
 import {api} from '../../utils/api';
 import SearchBar from '../../components/SearchBar';
 import {theme} from '../../styles/theme';
+const {height} = Dimensions.get('window');
 
 const Home = () => {
   const [motorcycle, setMotorcycle] = React.useState([]);
@@ -72,12 +73,122 @@ const Home = () => {
       </Animated.View>
     </View>
   ) : (
-    <Main style={[Platform.OS === 'ios' ? {paddingTop: 50} : {}]}>
-      <SearchBar
-        styleIcon={{color: theme.colors.black}}
-        styleInput={{color: theme.colors.black}}
-      />
-    </Main>
+    <>
+      <Header
+        style={[
+          {backgroundColor: theme.colors.green},
+          Platform.OS === 'ios'
+            ? {height: height / 10}
+            : {height: height / 8.5},
+        ]}>
+        <SearchBar
+          styleIcon={{color: theme.colors.white}}
+          styleInput={{color: theme.colors.black}}
+        />
+      </Header>
+      <Main
+        showsVerticalScrollIndicator={false}
+        overScrollMode="never"
+        contentContainerStyle={{alignItems: 'center'}}
+        style={[Platform.OS === 'ios' ? {paddingTop: 50} : {}]}>
+        <View
+          style={{
+            width: '100%',
+            height: 80,
+            marginBottom: 30,
+            backgroundColor: theme.colors.green,
+          }}
+        />
+        <View
+          style={{
+            width: '100%',
+            height: 80,
+            marginBottom: 30,
+            backgroundColor: theme.colors.green,
+          }}
+        />
+        <View
+          style={{
+            width: '100%',
+            height: 80,
+            marginBottom: 30,
+            backgroundColor: theme.colors.green,
+          }}
+        />
+        <View
+          style={{
+            width: '100%',
+            height: 80,
+            marginBottom: 30,
+            backgroundColor: theme.colors.green,
+          }}
+        />
+        <View
+          style={{
+            width: '100%',
+            height: 80,
+            marginBottom: 30,
+            backgroundColor: theme.colors.green,
+          }}
+        />
+        <View
+          style={{
+            width: '100%',
+            height: 80,
+            marginBottom: 30,
+            backgroundColor: theme.colors.green,
+          }}
+        />
+        <View
+          style={{
+            width: '100%',
+            height: 80,
+            marginBottom: 30,
+            backgroundColor: theme.colors.green,
+          }}
+        />
+        <View
+          style={{
+            width: '100%',
+            height: 80,
+            marginBottom: 30,
+            backgroundColor: theme.colors.green,
+          }}
+        />
+        <View
+          style={{
+            width: '100%',
+            height: 80,
+            marginBottom: 30,
+            backgroundColor: theme.colors.green,
+          }}
+        />
+        <View
+          style={{
+            width: '100%',
+            height: 80,
+            marginBottom: 30,
+            backgroundColor: theme.colors.green,
+          }}
+        />
+        <View
+          style={{
+            width: '100%',
+            height: 80,
+            marginBottom: 30,
+            backgroundColor: theme.colors.green,
+          }}
+        />
+        <View
+          style={{
+            width: '100%',
+            height: 80,
+            marginBottom: 30,
+            backgroundColor: theme.colors.green,
+          }}
+        />
+      </Main>
+    </>
   );
 };
 
