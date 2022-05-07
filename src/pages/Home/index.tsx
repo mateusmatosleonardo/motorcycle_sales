@@ -20,17 +20,14 @@ import {
   Price,
 } from './styles';
 
-import LogoApp from '../../assets/logoMoto.png';
-import Biz from '../../assets/biz.png';
-import Pop from '../../assets/pop.png';
-import Cg from '../../assets/cg.png';
+import Brand from '../../assets/Brand.png';
 import {api} from '../../utils/api';
 import SearchBar from '../../components/SearchBar';
 import Button from '../../components/Button';
 import {theme} from '../../styles/theme';
 import Card from '../../components/Card';
 import Right from 'react-native-vector-icons/AntDesign';
-const {height} = Dimensions.get('window');
+const {width, height} = Dimensions.get('window');
 
 const Home = () => {
   const [motorcycle, setMotorcycle] = React.useState([]);
@@ -99,7 +96,7 @@ const Home = () => {
         style={{
           translateY: floatAnim,
         }}>
-        <Logo source={LogoApp} />
+        <Logo source={Brand} />
       </Animated.View>
     </View>
   ) : (
@@ -142,7 +139,7 @@ const Home = () => {
                   />
                 </BgMoto>
                 <NameMoto>{item.name}</NameMoto>
-                <Cc>{item.cc}</Cc>
+                <Cc>{item.cc} cc</Cc>
                 <Text
                   style={{
                     color: theme.colors.black,
@@ -157,7 +154,7 @@ const Home = () => {
                     justifyContent: 'space-between',
                     alignItems: 'center',
                   }}>
-                  <Price>R$ 12.730</Price>
+                  <Price>R$ {item.price}</Price>
                   <Button
                     style={{
                       width: 46,
@@ -188,14 +185,13 @@ const Home = () => {
 const styles = StyleSheet.create({
   cardStyle: {
     width: '100%',
-    maxWidth: 165,
-    height: 208,
+    maxWidth: width / 2.5,
     marginBottom: 20,
     backgroundColor: theme.colors.white,
     elevation: 1.5,
     borderRadius: 10,
-    paddingHorizontal: 5,
-    paddingVertical: 5,
+    paddingHorizontal: 8,
+    paddingVertical: 6,
   },
 });
 

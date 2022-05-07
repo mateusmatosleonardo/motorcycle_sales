@@ -1,11 +1,17 @@
-{
+{ 
+    "user": [
+    {
+        "email": "me2@test.com",
+        "password": "87654321"
+    }
+    ],
   "motos": [
     {
       "id": 1,
       "name": "Biz 125",
       "brand": "Honda",
       "cc": "124,9",
-      "price": "R$ 12.730",
+      "price": "12.730",
       "picture": "https://i.ibb.co/wBjMzpB/moto-biz.png"
     },
     {
@@ -13,7 +19,7 @@
       "name": "Pop 100",
       "brand": "Honda",
       "cc": "109,1",
-      "price": "R$ 8.330",
+      "price": "8.330",
       "picture": "https://i.ibb.co/FDy1RHF/pop.png"
     },
     {
@@ -21,57 +27,64 @@
       "name": "CG 160 Titan",
       "brand": "Honda",
       "cc": "162,7",
-      "price": "R$ 14.620",
+      "price": "14.620",
       "picture": "https://i.ibb.co/1ZcJ4DL/cg.png"
     },
     {
       "id": 4,
-      "name": "CG 160 HHHH",
-      "brand": "Honda",
-      "cc": "162,7",
-      "price": "R$ 14.620"
+      "name": "Kawasaki Z1000",
+      "brand": "Kawasaki",
+      "cc": "1.043",
+      "price": " 70.290",
+      "picture": "https://i.ibb.co/BZDxbqp/kawasaki.png"
     },
     {
       "id": 5,
-      "name": "CG 160 HHHH",
-      "brand": "Honda",
-      "cc": "162,7",
-      "price": "R$ 14.620"
+      "name": "Kawasaki KLX250",
+      "brand": "Kawasaki",
+      "cc": "249",
+      "price": "6.170",
+      "picture": "https://i.ibb.co/PmPj6Bw/Kawasaki-KLX250.png"
     },
     {
       "id": 6,
-      "name": "CG 160 HHHH",
-      "brand": "Honda",
-      "cc": "162,7",
-      "price": "R$ 14.620"
+      "name": "Suzuki GW250",
+      "brand": "Suzuki",
+      "cc": "250",
+      "price": " 12.904",
+      "picture": "https://i.ibb.co/hH00bsb/Suzuki-GW250.png"
     },
     {
       "id": 7,
-      "name": "CG 160 HHHH",
-      "brand": "Honda",
-      "cc": "162,7",
-      "price": "R$ 14.620"
+      "name": "V-STROM 650",
+      "brand": "Suzuki",
+      "cc": "645",
+      "price": "58.905",
+      "picture": "https://i.ibb.co/2dtkFtk/V-STROM-650.png"
     },
     {
       "id": 8,
-      "name": "CG 160 HHHH",
-      "brand": "Honda",
-      "cc": "162,7",
-      "price": "R$ 14.620"
+      "name": "Yamaha XJ6",
+      "brand": "Yamaha",
+      "cc": "600",
+      "price": "28.890",
+      "picture": "https://i.ibb.co/rZCzz9r/Yamaha-XJ6.png"
     },
     {
       "id": 9,
-      "name": "CG 160 HHHH",
-      "brand": "Honda",
-      "cc": "162,7",
-      "price": "R$ 14.620"
+      "name": "Yamaha Ténéré",
+      "brand": "Yamaha",
+      "cc": "1.200",
+      "price": "58.490",
+      "picture": "https://i.ibb.co/YTTpTzs/Yamaha-T-n-r.png"
     },
     {
       "id": 10,
-      "name": "CG 160 HHHH",
+      "name": "XRE 300",
       "brand": "Honda",
-      "cc": "162,7",
-      "price": "R$ 14.620"
+      "cc": "291,6",
+      "price": "23.670",
+      "picture": "https://i.ibb.co/G05FVQk/XRE-300.png"
     }
   ]
 }

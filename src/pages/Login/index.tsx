@@ -10,7 +10,7 @@ import {
   TextError,
   TitleInput,
 } from './styles';
-import LogoApp from '../../assets/logoMoto.png';
+import Brand from '../../assets/Brand.png';
 import Input from '../../components/Input';
 import {
   StyleSheet,
@@ -66,7 +66,7 @@ const Login: React.FC = () => {
     <Container>
       <Main>
         <ContainerLogo>
-          <Logo source={LogoApp} />
+          <Logo source={Brand} />
         </ContainerLogo>
         <ContainerInputs>
           <TitleInput>E-mail</TitleInput>
