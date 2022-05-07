@@ -21,8 +21,8 @@ import {
 } from './styles';
 
 import Brand from '../../assets/Brand.png';
+import BrandLight from '../../assets/BrandLight.png';
 import {api} from '../../utils/api';
-import SearchBar from '../../components/SearchBar';
 import Button from '../../components/Button';
 import {theme} from '../../styles/theme';
 import Card from '../../components/Card';
@@ -82,8 +82,6 @@ const Home = () => {
 
   duration();
 
-  console.log(motorcycle);
-
   return isLoading ? (
     <View
       style={{
@@ -108,10 +106,9 @@ const Home = () => {
             ? {height: height / 10}
             : {height: height / 8.5},
         ]}>
-        <SearchBar
-          styleIcon={{color: theme.colors.white}}
-          styleInput={{color: theme.colors.black}}
-        />
+        <View>
+          <Image source={BrandLight} style={{width: 40, height: 45}} />
+        </View>
       </Header>
       <Main
         showsVerticalScrollIndicator={false}
