@@ -2,7 +2,7 @@ import React from 'react';
 import Container from '../../components/Container';
 import ArrowLeftL from 'react-native-vector-icons/Fontisto';
 import {Platform, Text, TouchableOpacity} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import {
   Main,
   Header,
@@ -16,6 +16,8 @@ import {theme} from '../../styles/theme';
 
 const Details = () => {
   const navigation = useNavigation();
+  const routes = useRoute();
+  const {item} = routes.params;
 
   return (
     <>
@@ -40,7 +42,7 @@ const Details = () => {
           <Text style={{color: theme.colors.black, fontSize: 14, marginTop: 8}}>
             A partir de
           </Text>
-          <Price style={{color: theme.colors.green}}>R$ 12.000</Price>
+          <Price style={{color: theme.colors.green}}>R$ {item.price}</Price>
         </InfoPurchase>
       </CompletePurchase>
     </>

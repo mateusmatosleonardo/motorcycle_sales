@@ -24,9 +24,12 @@ import {yupResolver} from '@hookform/resolvers/yup';
 import {useNavigation} from '@react-navigation/native';
 import {NavigationProp} from '@react-navigation/native';
 import {RootStackParamList} from '../../routes';
+import EncryptedStorage from 'react-native-encrypted-storage';
 import Icon from 'react-native-vector-icons/Ionicons';
 import * as yup from 'yup';
 import Button from '../../components/Button';
+import {api} from '../../utils/api';
+import {AxiosResponse} from 'axios';
 
 type LoginScreenProps = NavigationProp<RootStackParamList, 'Home'>;
 
@@ -43,22 +46,47 @@ const Login: React.FC = () => {
     control,
     handleSubmit,
     setValue,
-    formState: {errors},
+    getValues,
+    formState: {errors, isSubmitting},
   } = useForm({
     resolver: yupResolver(validateSchema),
   });
 
-  function handleSignIn(data: any) {
-    if (data.email === 'me2@test.com' && data.password === '87654321') {
-      setIsLoading(true);
-      setTimeout(() => {
-        setIsLoading(false);
-        navigation.navigate('Home');
-        setValue('email', '', {shouldValidate: true});
-        setValue('password', '', {shouldValidate: true});
-      }, 1200);
-    } else {
-      setError('E-mail ou senha inválidos!');
+  // function handleSignIn(data: any) {
+  //   if (data.email === 'me2@test.com' && data.password === '87654321') {
+  //     setIsLoading(true);
+  //     setTimeout(() => {
+  //       setIsLoading(false);
+  //       navigation.navigate('Home');
+  //       setValue('email', '', {shouldValidate: true});
+  //       setValue('password', '', {shouldValidate: true});
+  //     }, 1200);
+  //   } else {
+  //     setError('E-mail ou senha inválidos!');
+  //   }
+  // }
+
+  function handleSignIn(): Promise<void> {
+    const {email, password} = getValues();
+    return api
+      .get('/user', {params: {email}})
+      .then((response: AxiosResponse) => {
+        if (response.data.length === 0) {
+          setError('E-mail ou senha inválidos!');
+        } else if (response.data[0].password === password) {
+          storeUserSession('user', email);
+          navigation.navigate('Home');
+        } else {
+          setError('E-mail ou senha inválidos!');
+        }
+      });
+  }
+
+  async function storeUserSession(key: string, value: any) {
+    try {
+      await EncryptedStorage.setItem(key, value);
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -137,7 +165,7 @@ const Login: React.FC = () => {
         </ContainerInputs>
         <Button
           textBtn={
-            isLoading ? (
+            isSubmitting ? (
               <ActivityIndicator color={theme.colors.white} size="small" />
             ) : (
               'Login'

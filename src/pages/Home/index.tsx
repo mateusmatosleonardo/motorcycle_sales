@@ -29,6 +29,7 @@ import {theme} from '../../styles/theme';
 import Card from '../../components/Card';
 import Right from 'react-native-vector-icons/AntDesign';
 import Logout from 'react-native-vector-icons/MaterialIcons';
+import EncryptedStorage from 'react-native-encrypted-storage';
 import {useNavigation} from '@react-navigation/native';
 import {NavigationProp} from '@react-navigation/native';
 import {RootStackParamList} from '../../routes';
@@ -91,7 +92,11 @@ const Home = () => {
   duration();
 
   const signUp = () => {
-    navigation.navigate('Login');
+    EncryptedStorage.removeItem('user')
+      .then(() => {
+        navigation.navigate('Login');
+      })
+      .catch(err => console.log(err));
   };
 
   return isLoading ? (
@@ -176,7 +181,7 @@ const Home = () => {
                   }}>
                   <Price>R$ {item.price}</Price>
                   <Button
-                    action={() => navigation.navigate('Details')}
+                    action={() => navigation.navigate('Details', {item})}
                     style={{
                       width: 46,
                       height: 28,
