@@ -34,7 +34,7 @@ import {NavigationProp} from '@react-navigation/native';
 import {RootStackParamList} from '../../routes';
 const {width, height} = Dimensions.get('window');
 
-type HomeScreenProps = NavigationProp<RootStackParamList, 'Login'>;
+type HomeScreenProps = NavigationProp<RootStackParamList, 'Login', 'Details'>;
 
 const Home = () => {
   const navigation = useNavigation<HomeScreenProps>();
@@ -176,6 +176,7 @@ const Home = () => {
                   }}>
                   <Price>R$ {item.price}</Price>
                   <Button
+                    action={() => navigation.navigate('Details')}
                     style={{
                       width: 46,
                       height: 28,
