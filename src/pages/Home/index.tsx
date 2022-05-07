@@ -8,6 +8,7 @@ import {
   StyleSheet,
   Image,
   Text,
+  TouchableOpacity,
 } from 'react-native';
 import {
   BgMoto,
@@ -22,14 +23,21 @@ import {
 
 import Brand from '../../assets/Brand.png';
 import BrandLight from '../../assets/BrandLight.png';
-import {api} from '../../utils/api';
 import Button from '../../components/Button';
+import {api} from '../../utils/api';
 import {theme} from '../../styles/theme';
 import Card from '../../components/Card';
 import Right from 'react-native-vector-icons/AntDesign';
+import Logout from 'react-native-vector-icons/MaterialIcons';
+import {useNavigation} from '@react-navigation/native';
+import {NavigationProp} from '@react-navigation/native';
+import {RootStackParamList} from '../../routes';
 const {width, height} = Dimensions.get('window');
 
+type HomeScreenProps = NavigationProp<RootStackParamList, 'Login'>;
+
 const Home = () => {
+  const navigation = useNavigation<HomeScreenProps>();
   const [motorcycle, setMotorcycle] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
   const floatAnim = React.useRef(new Animated.Value(0)).current;
@@ -82,6 +90,10 @@ const Home = () => {
 
   duration();
 
+  const signUp = () => {
+    navigation.navigate('Login');
+  };
+
   return isLoading ? (
     <View
       style={{
@@ -106,9 +118,20 @@ const Home = () => {
             ? {height: height / 10}
             : {height: height / 8.5},
         ]}>
-        <View>
-          <Image source={BrandLight} style={{width: 40, height: 45}} />
-        </View>
+        <Image source={BrandLight} style={{width: 40, height: 45}} />
+        <TouchableOpacity
+          onPress={() => signUp()}
+          activeOpacity={0.7}
+          style={{
+            width: 38,
+            height: 38,
+            backgroundColor: 'rgba(0, 0, 0, 0.2)',
+            justifyContent: 'center',
+            alignItems: 'center',
+            borderRadius: 50,
+          }}>
+          <Logout name="logout" color={theme.colors.white} size={22} />
+        </TouchableOpacity>
       </Header>
       <Main
         showsVerticalScrollIndicator={false}

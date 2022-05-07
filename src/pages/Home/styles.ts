@@ -13,7 +13,9 @@ export const Logo = styled.Image`
 export const Header = styled.View`
   width: 100%;
   padding: 0px 40px;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 `;
