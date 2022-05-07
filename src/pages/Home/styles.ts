@@ -23,6 +23,7 @@ export const ListCard = styled.View`
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 `;
 
 export const BgMoto = styled.View`
