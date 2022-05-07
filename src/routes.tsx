@@ -36,9 +36,7 @@ function Routes() {
   }, []);
 
   if (loading) {
-    <View>
-      <Text style={{color: '#313030'}}>Loading...</Text>
-    </View>;
+    null;
   }
 
   return (
