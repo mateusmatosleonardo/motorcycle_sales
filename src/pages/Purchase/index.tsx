@@ -16,10 +16,14 @@ import {
   CardPurchase,
   Color,
   InfoMotorcycle,
+  InputArea,
   Main,
   NameMotorcycle,
   Price,
+  TitleInput,
+  TitleSection,
 } from './styles';
+import Input from '../../components/Input';
 
 const Purchase = () => {
   const navigation = useNavigation();
@@ -87,6 +91,20 @@ const Purchase = () => {
                 <Price>R$ {motorcycle.price}</Price>
               </InfoMotorcycle>
             </CardPurchase>
+            <TitleSection>Seus dados</TitleSection>
+            <TitleInput>Nome</TitleInput>
+            <InputArea>
+              <Input styleInput={{paddingLeft: 10, color: '#313030'}} />
+            </InputArea>
+            <TitleInput>E-mail</TitleInput>
+            <InputArea>
+              <Input styleInput={{paddingLeft: 10, color: '#313030'}} />
+            </InputArea>
+            <TitleInput>Celular</TitleInput>
+            <InputArea>
+              <Input styleInput={{paddingLeft: 10, color: '#313030'}} />
+            </InputArea>
+            <TitleSection>Escolha a forma de pagamento</TitleSection>
           </Main>
         </Container>
       )}

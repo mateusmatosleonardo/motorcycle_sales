@@ -31,3 +31,30 @@ export const Color = styled.Text`
 `;
 
 export const InfoMotorcycle = styled.View``;
+
+export const TitleSection = styled.Text`
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 14.5px;
+  margin-bottom: 8px;
+  color: #313030;
+`;
+
+export const TitleInput = styled.Text`
+  font-size: 14px;
+  color: #313030;
+  margin-bottom: 6px;
+`;
+
+export const InputArea = styled.View`
+  width: 100%;
+  height: 45px;
+  border-width: 1px;
+  border-color: #54b175;
+  border-radius: 8px;
+  margin-bottom: 8px;
+`;
+
+export const FormOfPayment = styled.View`
+  width: 100%;
+`;
