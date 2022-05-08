@@ -42,7 +42,7 @@ export const TitleSection = styled.Text`
 
 export const TitleInput = styled.Text`
   font-size: 14px;
-  color: #313030;
+  color: #414040;
   margin-bottom: 6px;
 `;
 
@@ -55,6 +55,46 @@ export const InputArea = styled.View`
   margin-bottom: 8px;
 `;
 
-export const FormOfPayment = styled.View`
+export const FormOfPayment = styled.TouchableOpacity`
   width: 100%;
+  padding: 5px 8px;
+  border-radius: 8px;
+  margin-bottom: 11px;
+  background-color: #f4f4f4;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const TitleFormOfPayment = styled.Text`
+  font-size: 14px;
+  color: #414040;
+  margin-left: 8px;
+`;
+
+export const ModalPayment = styled.View`
+  width: 325px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fafafa;
+`;
+
+export const HeaderModal = styled.View`
+  width: 100%;
+  margin-bottom: 18px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const TitleModal = styled.Text`
+  font-size: 14px;
+  font-weight: bold;
+  color: #414040;
+`;
+
+export const ContainerValidate = styled.View`
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;

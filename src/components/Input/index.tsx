@@ -10,6 +10,8 @@ interface InputProps {
   value?: string;
   onChangeText?: (text: string) => void;
   onBlur?: (e?: any) => void;
+  placeholder?: string;
+  placeholderTextColor?: string;
 }
 
 const Input = ({
@@ -20,6 +22,8 @@ const Input = ({
   align,
   value,
   onChangeText,
+  placeholder,
+  placeholderTextColor,
 }: InputProps) => {
   return (
     <TextInput
@@ -30,6 +34,8 @@ const Input = ({
       textAlign={align}
       value={value}
       onChangeText={onChangeText}
+      placeholder={placeholder}
+      placeholderTextColor={placeholderTextColor}
     />
   );
 };
