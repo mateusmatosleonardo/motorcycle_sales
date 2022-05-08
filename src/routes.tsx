@@ -43,7 +43,7 @@ function Routes() {
   }, []);
 
   if (loading) {
-    null;
+    return null;
   }
 
   return (
