@@ -5,6 +5,7 @@ import EncryptedStorage from 'react-native-encrypted-storage';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Details from './pages/Details';
+import Purchase from './pages/Purchase';
 
 export type RootStackParamList = {
   Login: undefined;
@@ -26,6 +27,7 @@ export type RootStackParamList = {
       dryWeight: string;
     };
   };
+  Purchase: undefined;
 };
 
 function Routes() {
@@ -62,6 +64,11 @@ function Routes() {
         <Stack.Screen
           name="Details"
           component={Details}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Purchase"
+          component={Purchase}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

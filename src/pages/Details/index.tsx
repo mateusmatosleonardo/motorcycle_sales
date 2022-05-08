@@ -7,6 +7,8 @@ import Drop from 'react-native-vector-icons/Feather';
 import Gas from 'react-native-vector-icons/FontAwesome5';
 import {Image, Platform, Text, TouchableOpacity, View} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
+import {NavigationProp} from '@react-navigation/native';
+import {RootStackParamList} from '../../routes';
 import {
   Main,
   Header,
@@ -28,10 +30,12 @@ import {
 import {theme} from '../../styles/theme';
 import Button from '../../components/Button';
 
+type DetailsScreenProps = NavigationProp<RootStackParamList, 'Purchase'>;
+
 const Details = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<DetailsScreenProps>();
   const routes = useRoute();
-  const {item} = routes.params;
+  const {item} = routes.params as {item: any};
 
   return (
     <>
@@ -133,6 +137,7 @@ const Details = () => {
           <Price style={{color: theme.colors.green}}>R$ {item.price}</Price>
         </InfoPurchase>
         <Button
+          action={() => navigation.navigate('Purchase', {id: item.id} as any)}
           style={{
             width: 180,
             height: 44,

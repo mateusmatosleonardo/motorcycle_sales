@@ -189,7 +189,11 @@ const Home = () => {
                   }}>
                   <Price>R$ {item.price}</Price>
                   <Button
-                    action={() => navigation.navigate('Details', {item})}
+                    action={() =>
+                      navigation.navigate('Details', {
+                        item,
+                      } as {item: any})
+                    }
                     style={{
                       width: 46,
                       height: 28,
