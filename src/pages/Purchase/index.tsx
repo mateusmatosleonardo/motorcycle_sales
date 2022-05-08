@@ -1,17 +1,38 @@
 import React, {useEffect} from 'react';
-import {Text, View, ActivityIndicator} from 'react-native';
+import {
+  ActivityIndicator,
+  Image,
+  Platform,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {api} from '../../utils/api';
-import {useRoute} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import {theme} from '../../styles/theme';
+import {Header, TitleHeader, InvisibleAlign} from '../Details/styles';
+import Container from '../../components/Container';
+import ArrowLeftL from 'react-native-vector-icons/Fontisto';
+import {
+  CardPurchase,
+  Color,
+  InfoMotorcycle,
+  Main,
+  NameMotorcycle,
+  Price,
+} from './styles';
 
 const Purchase = () => {
+  const navigation = useNavigation();
   const route = useRoute();
   const {id} = route.params as {id: number};
   const [motorcycle, setMotorcycle] = React.useState({
     id: 0,
     price: 0,
+    picture: '',
+    name: '',
+    color: '',
   });
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = React.useState<boolean>(true);
   const getData = React.useCallback(() => {
     api
       .get(`/motos?id=${id}`)
@@ -29,11 +50,45 @@ const Purchase = () => {
   return (
     <>
       {loading ? (
-        <ActivityIndicator size="large" color={theme.colors.green} />
-      ) : (
-        <View>
-          <Text style={{color: '#313030'}}>{motorcycle.price}</Text>
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+          <ActivityIndicator size="large" color={theme.colors.green} />
         </View>
+      ) : (
+        <Container>
+          <Header style={[Platform.OS === 'ios' && {paddingTop: 35}]}>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => navigation.goBack()}>
+              <ArrowLeftL
+                name="arrow-left-l"
+                size={22}
+                color={theme.colors.white}
+              />
+            </TouchableOpacity>
+            <TitleHeader>Pagamento</TitleHeader>
+            <InvisibleAlign />
+          </Header>
+
+          <Main>
+            <CardPurchase>
+              <Image
+                source={{uri: motorcycle.picture}}
+                style={{
+                  width: 170,
+                  height: 120,
+                  backgroundColor: '#fff',
+                  borderRadius: 10,
+                  resizeMode: 'contain',
+                }}
+              />
+              <InfoMotorcycle>
+                <NameMotorcycle>{motorcycle.name}</NameMotorcycle>
+                <Color>{motorcycle.color}</Color>
+                <Price>R$ {motorcycle.price}</Price>
+              </InfoMotorcycle>
+            </CardPurchase>
+          </Main>
+        </Container>
       )}
     </>
   );
