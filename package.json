@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "server": "json-server --watch db.json --host 192.168.0.113 --port 8000"
+    "server": "json-server --watch ./src/services/db.json --host 192.168.0.113 --port 8000"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.8.8",

@@ -82,13 +82,13 @@ const Login: React.FC = () => {
       });
   }
 
-  // async function storeUserSession(key: string, value: any) {
-  //   try {
-  //     await EncryptedStorage.setItem(key, value);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
+  async function storeUserSession(key: string, value: any) {
+    try {
+      await EncryptedStorage.setItem(key, value);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <Container>
