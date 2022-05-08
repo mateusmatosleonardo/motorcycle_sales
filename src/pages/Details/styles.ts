@@ -26,21 +26,23 @@ export const InvisibleAlign = styled.View`
   height: 22px;
 `;
 
-export const CompletePurchase = styled.View`
+export const PurchaseInformation = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: 70px;
-  border-top-width: 1px;
-  border-color: #dedede;
+  padding: 0px 30px;
   position: absolute;
   bottom: 0;
   margin: 0 auto;
   z-index: 999;
+  border-top-width: 1px;
+  border-color: #dedede;
   background-color: #fafafa;
 `;
 
-export const InfoPurchase = styled.View`
-  padding: 0px 10px;
-`;
+export const InfoPurchase = styled.View``;
 
 export const Price = styled.Text`
   font-size: 18px;
@@ -81,8 +83,8 @@ export const CardDescription = styled.View`
   width: 80px;
   max-width: 74px;
   height: 87px;
-  background-color: #f4f4f4;
   border-radius: 8px;
+  background-color: #f4f4f4;
 `;
 
 export const Description = styled.Text`

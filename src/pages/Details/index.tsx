@@ -5,14 +5,14 @@ import Motorcycle from 'react-native-vector-icons/FontAwesome';
 import Calendar from 'react-native-vector-icons/FontAwesome';
 import Drop from 'react-native-vector-icons/Feather';
 import Gas from 'react-native-vector-icons/FontAwesome5';
-import {Image, Platform, Text, TouchableOpacity} from 'react-native';
+import {Image, Platform, Text, TouchableOpacity, View} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {
   Main,
   Header,
   TitleHeader,
   InvisibleAlign,
-  CompletePurchase,
+  PurchaseInformation,
   InfoPurchase,
   Price,
   ContainerPicture,
@@ -26,6 +26,7 @@ import {
   ValueDescription,
 } from './styles';
 import {theme} from '../../styles/theme';
+import Button from '../../components/Button';
 
 const Details = () => {
   const navigation = useNavigation();
@@ -114,17 +115,36 @@ const Details = () => {
             <TitleDescription>Peso Seco: </TitleDescription>
             <ValueDescription>{item.dryWeight}</ValueDescription>
           </DetailedDescription>
+          <View
+            style={{
+              width: '100%',
+              height: 100,
+              marginBottom: 50,
+            }}
+          />
         </Main>
       </Container>
 
-      <CompletePurchase>
+      <PurchaseInformation>
         <InfoPurchase>
-          <Text style={{color: theme.colors.black, fontSize: 14, marginTop: 8}}>
+          <Text style={{color: theme.colors.black, fontSize: 14}}>
             A partir de
           </Text>
           <Price style={{color: theme.colors.green}}>R$ {item.price}</Price>
         </InfoPurchase>
-      </CompletePurchase>
+        <Button
+          style={{
+            width: 180,
+            height: 44,
+            backgroundColor: theme.colors.green,
+            borderRadius: 8,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+          textBtn="Comprar"
+          styleText={{color: theme.colors.white, fontSize: 15}}
+        />
+      </PurchaseInformation>
     </>
   );
 };
