@@ -77,15 +77,15 @@ const Details = () => {
                 size={30}
                 color={theme.colors.green}
               />
-              <Description>{item.brand}</Description>
+              <Description>{item.year}</Description>
             </CardDescription>
             <CardDescription>
               <Drop name="droplet" size={30} color={theme.colors.green} />
-              <Description>{item.brand}</Description>
+              <Description>{item.color}</Description>
             </CardDescription>
             <CardDescription>
               <Gas name="gas-pump" size={30} color={theme.colors.green} />
-              <Description>{item.brand}</Description>
+              <Description>{item.typesOfFuel}</Description>
             </CardDescription>
           </CardsDescription>
           <DetailedDescription>
@@ -94,18 +94,25 @@ const Details = () => {
           </DetailedDescription>
           <DetailedDescription>
             <TitleDescription>Transmissão: </TitleDescription>
+            <ValueDescription>{item.transmission}</ValueDescription>
           </DetailedDescription>
           <DetailedDescription>
             <TitleDescription>Sistema de partida: </TitleDescription>
+            <ValueDescription>{item.startingSystem}</ValueDescription>
           </DetailedDescription>
           <DetailedDescription>
             <TitleDescription>Tanque de Combustível: </TitleDescription>
+            <ValueDescription>{item.fuelTank}</ValueDescription>
           </DetailedDescription>
           <DetailedDescription>
             <TitleDescription>Óleo do Motor: </TitleDescription>
+            <ValueDescription>
+              {item.motorOil ? item.motorOil : 'Não informado'}
+            </ValueDescription>
           </DetailedDescription>
           <DetailedDescription>
-            <TitleDescription>Óleo do Motor: </TitleDescription>
+            <TitleDescription>Peso Seco: </TitleDescription>
+            <ValueDescription>{item.dryWeight}</ValueDescription>
           </DetailedDescription>
         </Main>
       </Container>
@@ -115,7 +122,7 @@ const Details = () => {
           <Text style={{color: theme.colors.black, fontSize: 14, marginTop: 8}}>
             A partir de
           </Text>
-          <Price style={{color: theme.colors.green}}>R${item.price}</Price>
+          <Price style={{color: theme.colors.green}}>R$ {item.price}</Price>
         </InfoPurchase>
       </CompletePurchase>
     </>

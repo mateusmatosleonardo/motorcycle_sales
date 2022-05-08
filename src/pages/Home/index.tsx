@@ -152,6 +152,14 @@ const Home = () => {
                 cc: string;
                 price: string;
                 picture: string;
+                year?: number;
+                color?: string;
+                typesOfFuel?: string;
+                transmission?: string;
+                startingSystem?: string;
+                fuelTank?: string;
+                motorOil?: string;
+                dryWeight?: string;
               },
               index,
             ) => (

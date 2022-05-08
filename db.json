@@ -12,15 +12,31 @@
       "brand": "Honda",
       "cc": "124,9",
       "price": "12.730",
-      "picture": "https://i.ibb.co/wBjMzpB/moto-biz.png"
+      "picture": "https://i.ibb.co/wBjMzpB/moto-biz.png",
+      "year": 2022,
+      "color": "Branco Perolizado",
+      "typesOfFuel": "Gasolina/Etanol",
+      "transmission": "4 velocidades",
+      "startingSystem" : "Elétrico",
+      "fuelTank": "5,1 litros",
+      "motorOil": "0,9 litro",
+      "dryWeight": "100 kg"
     },
     {
       "id": 2,
-      "name": "Pop 100",
+      "name": "Pop 100i",
       "brand": "Honda",
       "cc": "109,1",
       "price": "8.330",
-      "picture": "https://i.ibb.co/FDy1RHF/pop.png"
+      "picture": "https://i.ibb.co/FDy1RHF/pop.png",
+      "year": 2022,
+      "color": "Vermelho",
+      "typesOfFuel": "Gasolina",
+      "transmission": "4 velocidades",
+      "startingSystem" : "Pedal",
+      "fuelTank": "4,2 litros",
+      "motorOil": "1,0 litro",
+      "dryWeight": "87 kg"
     },
     {
       "id": 3,
@@ -28,7 +44,15 @@
       "brand": "Honda",
       "cc": "162,7",
       "price": "14.620",
-      "picture": "https://i.ibb.co/1ZcJ4DL/cg.png"
+      "picture": "https://i.ibb.co/1ZcJ4DL/cg.png",
+      "year": 2022,
+      "color": "Cinza Metálico",
+      "typesOfFuel": "Gasolina/Etanol",
+      "transmission": "5 velocidades",
+      "startingSystem" : "Elétrico",
+      "fuelTank": "16,1 litros",
+      "motorOil": "1,2 litro",
+      "dryWeight": "117 kg"
     },
     {
       "id": 4,
@@ -36,7 +60,15 @@
       "brand": "Kawasaki",
       "cc": "1.043",
       "price": " 70.290",
-      "picture": "https://i.ibb.co/BZDxbqp/kawasaki.png"
+      "picture": "https://i.ibb.co/BZDxbqp/kawasaki.png",
+      "year": 2021,
+      "color": "Preto",
+      "typesOfFuel": "Gasolina",
+      "transmission": "6 velocidades",
+      "startingSystem" : "Elétrico",
+      "fuelTank": "17 litros",
+      "motorOil": "",
+      "dryWeight": "221 kg"
     },
     {
       "id": 5,
@@ -44,7 +76,15 @@
       "brand": "Kawasaki",
       "cc": "249",
       "price": "6.170",
-      "picture": "https://i.ibb.co/PmPj6Bw/Kawasaki-KLX250.png"
+      "picture": "https://i.ibb.co/PmPj6Bw/Kawasaki-KLX250.png",
+      "year": 2015,
+      "color": "Verde",
+      "typesOfFuel": "Gasolina",
+      "transmission": "6 velocidades",
+      "startingSystem" : "Elétrico",
+      "fuelTank": "7,7 litros",
+      "motorOil": "",
+      "dryWeight": "138 kg"
     },
     {
       "id": 6,
@@ -52,7 +92,15 @@
       "brand": "Suzuki",
       "cc": "250",
       "price": " 12.904",
-      "picture": "https://i.ibb.co/hH00bsb/Suzuki-GW250.png"
+      "picture": "https://i.ibb.co/hH00bsb/Suzuki-GW250.png",
+      "year": 2011,
+      "color": "Preto",
+      "typesOfFuel": "Gasolina",
+      "transmission": "6 velocidades",
+      "startingSystem" : "Elétrico",
+      "fuelTank": "13,3 litros",
+      "motorOil": "",
+      "dryWeight": "182 kg"
     },
     {
       "id": 7,
@@ -60,7 +108,15 @@
       "brand": "Suzuki",
       "cc": "645",
       "price": "58.905",
-      "picture": "https://i.ibb.co/2dtkFtk/V-STROM-650.png"
+      "picture": "https://i.ibb.co/2dtkFtk/V-STROM-650.png",
+      "year": 2022,
+      "color": "Preto",
+      "typesOfFuel": "Gasolina",
+      "transmission": "6 velocidades",
+      "startingSystem" : "Elétrico",
+      "fuelTank": "20 litros",
+      "motorOil": "3,0 litros",
+      "dryWeight": "199 kg"
     },
     {
       "id": 8,
@@ -68,7 +124,15 @@
       "brand": "Yamaha",
       "cc": "600",
       "price": "28.890",
-      "picture": "https://i.ibb.co/rZCzz9r/Yamaha-XJ6.png"
+      "picture": "https://i.ibb.co/rZCzz9r/Yamaha-XJ6.png",
+      "year": 2016,
+      "color": "Azul",
+      "typesOfFuel": "Gasolina",
+      "transmission": "6 velocidades",
+      "startingSystem" : "Elétrico",
+      "fuelTank": "17,3 litros",
+      "motorOil": "3,4 litros",
+      "dryWeight": "186 kg"
     },
     {
       "id": 9,
@@ -76,15 +140,31 @@
       "brand": "Yamaha",
       "cc": "1.200",
       "price": "58.490",
-      "picture": "https://i.ibb.co/YTTpTzs/Yamaha-T-n-r.png"
+      "picture": "https://i.ibb.co/YTTpTzs/Yamaha-T-n-r.png",
+      "year": 2019,
+      "color": "Azul",
+      "typesOfFuel": "Gasolina",
+      "transmission": "6 velocidades",
+      "startingSystem" : "Elétrico",
+      "fuelTank": "22 litros",
+      "motorOil": "4,2 litros",
+      "dryWeight": "265kg"
     },
     {
       "id": 10,
       "name": "XRE 300",
       "brand": "Honda",
       "cc": "291,6",
-      "price": "23.670",
-      "picture": "https://i.ibb.co/G05FVQk/XRE-300.png"
+      "price": "15.560",
+      "picture": "https://i.ibb.co/G05FVQk/XRE-300.png",
+      "year": 2016,
+      "color": "Preto",
+      "typesOfFuel": "Gasolina/Etanol",
+      "transmission": "5 velocidades",
+      "startingSystem" : "Elétrico",
+      "fuelTank": "13,8 litros",
+      "motorOil": "1,4 litros",
+      "dryWeight": "144kg"
     }
   ]
 }

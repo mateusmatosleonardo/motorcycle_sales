@@ -5,7 +5,6 @@ import EncryptedStorage from 'react-native-encrypted-storage';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Details from './pages/Details';
-import {View, Text} from 'react-native';
 
 export type RootStackParamList = {
   Login: undefined;
@@ -17,6 +16,14 @@ export type RootStackParamList = {
       cc: string;
       price: string;
       picture: string;
+      year: number;
+      color: string;
+      typesOfFuel: string;
+      transmission: string;
+      startingSystem: string;
+      fuelTank: string;
+      motorOil: string;
+      dryWeight: string;
     };
   };
 };

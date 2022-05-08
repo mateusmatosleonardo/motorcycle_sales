@@ -88,6 +88,7 @@ export const CardDescription = styled.View`
 export const Description = styled.Text`
   color: #414040;
   font-size: 12px;
+  text-align: center;
 `;
 
 export const DetailedDescription = styled.View`
