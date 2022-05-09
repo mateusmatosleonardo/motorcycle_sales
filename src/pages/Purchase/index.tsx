@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import {api} from '../../utils/api';
 import {useNavigation, useRoute} from '@react-navigation/native';
+import {NavigationProp} from '@react-navigation/native';
+import {RootStackParamList} from '../../routes';
 import {theme} from '../../styles/theme';
 import {Header, TitleHeader, InvisibleAlign} from '../Details/styles';
 
@@ -43,14 +45,18 @@ import {
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
+type PurchaseScreenProps = NavigationProp<RootStackParamList, 'Home'>;
+
 const Purchase = () => {
   const [name, setName] = React.useState<string>('');
   const [email, setEmail] = React.useState<string>('');
   const [confirmPurchase, setConfirmPurchase] = React.useState<boolean>(false);
   const [visible, setVisible] = React.useState<boolean>(false);
+  const [visibleModalFinish, setVisibleModalFinish] =
+    React.useState<boolean>(false);
   const [visibleInstallments, setVisibleInstallments] =
     React.useState<boolean>(false);
-  const navigation = useNavigation();
+  const navigation = useNavigation<PurchaseScreenProps>();
   const route = useRoute();
   const {id} = route.params as {id: number};
   const [motorcycle, setMotorcycle] = React.useState({
@@ -62,7 +68,6 @@ const Purchase = () => {
   });
   const [loading, setLoading] = React.useState<boolean>(true);
   const [selectInstallment, setSelectInstallment] = React.useState('');
-
   const [numberOfInstallments, setNumberOfInstallments] = useState<any>();
 
   const getData = React.useCallback(() => {
@@ -157,7 +162,7 @@ const Purchase = () => {
 
   const FinalizePurchase = () => {
     return (
-      <Modal transparent animationType="fade">
+      <Modal transparent animationType="fade" visible={visibleModalFinish}>
         <View
           style={{
             flex: 1,
@@ -184,6 +189,14 @@ const Purchase = () => {
         </View>
       </Modal>
     );
+  };
+
+  const finishPurchase = () => {
+    setVisibleModalFinish(true);
+    setTimeout(() => {
+      setVisibleModalFinish(false);
+      navigation.navigate('Home');
+    }, 1500);
   };
 
   useEffect(() => {
@@ -343,6 +356,7 @@ const Purchase = () => {
             ) : null}
 
             <Button
+              action={() => finishPurchase()}
               style={{
                 width: '100%',
                 height: 45,
