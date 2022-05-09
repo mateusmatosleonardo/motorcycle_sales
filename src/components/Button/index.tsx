@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 
 interface ButtonProps {
-  action?: () => void;
+  action?: () => void | any;
   style?: {} | Array<{}>;
   textBtn?: string | any;
   styleText?: {} | Array<{}>;

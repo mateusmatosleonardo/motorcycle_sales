@@ -98,3 +98,30 @@ export const ContainerValidate = styled.View`
   justify-content: space-between;
   align-items: center;
 `;
+
+export const ModalInstallment = styled.View`
+  width: 325px;
+  border-radius: 8px;
+  background-color: #fafafa;
+`;
+
+export const NumberOfInstallments = styled.Text`
+  font-size: 14px;
+  color: #414040;
+  padding: 6px 10px;
+`;
+
+export const Diviser = styled.View`
+  width: 100%;
+  border-width: 0.3px;
+  border-color: #919090;
+  margin-top: 2px;
+`;
+
+export const PurchaseData = styled.View`
+  width: 100%;
+  flex-direction: column;
+  padding: 4px;
+  border-radius: 8px;
+  background-color: #f4f4f4;
+`;
