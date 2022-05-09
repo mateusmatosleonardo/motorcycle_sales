@@ -1,7 +1,7 @@
 
 | Codinome | Framework | Linguagem | Plataformas |
 |---|---|---|---|
-| Motorcycle Sales | React-native | JavaScript | [Android, IOS] |
+| Motorcycle Sales | React-native | JavaScript/TypeScript | [Android, IOS] |
 
 ### Sumário
 - Introdução
