@@ -22,7 +22,7 @@
   
 
 ## Introdução
-Esse projeto de trata de uma aplicativo de vendas de motos
+Esse projeto de trata de uma aplicativo de vendas de motos fictício.
 
 ## Preview
 ![login](https://user-images.githubusercontent.com/73812069/167340586-0e802c4b-9f2a-40dd-8329-9bc81f545301.png)
