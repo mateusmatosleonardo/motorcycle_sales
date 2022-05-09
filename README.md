@@ -5,6 +5,7 @@
 
 ### Sumário
 - Introdução
+- Preview (screens)
 - Pré-requisitos
 - Clonando repositório
 - Configuração do projeto
@@ -22,6 +23,15 @@
 
 ## Introdução
 Esse projeto de trata de uma aplicativo de vendas de motos
+
+## Preview
+![login](https://user-images.githubusercontent.com/73812069/167340586-0e802c4b-9f2a-40dd-8329-9bc81f545301.png)
+![home](https://user-images.githubusercontent.com/73812069/167338275-381e222f-7bf8-42ae-85e4-01780a3478c5.png)
+![details](https://user-images.githubusercontent.com/73812069/167338576-1ed80f80-8437-4467-bb6f-8ed36037d785.png)
+![payment](https://user-images.githubusercontent.com/73812069/167340365-61892889-04ff-44dc-9592-e80864f76302.png)
+![modalCreditCard](https://user-images.githubusercontent.com/73812069/167339093-92e1bfff-c3da-479c-b1df-01bc225da690.png)
+![installment](https://user-images.githubusercontent.com/73812069/167339407-88872a0b-b2a7-4bed-836b-42fe7570a12c.png)
+![purchaseData](https://user-images.githubusercontent.com/73812069/167340790-6cb14a10-914e-47a9-9dd0-b9ca73600232.png)
 
 ## Pré-requisitos
 - [✔️] git
