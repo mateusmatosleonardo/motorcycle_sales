@@ -73,6 +73,10 @@ Para instalar as dependências do projeto, execute o seguinte comando:
 ou
 <br>
 `npm install`
+<br>
+Para ios, rode:
+<br>
+`pod install`
 
 ## Execução do projeto
 
