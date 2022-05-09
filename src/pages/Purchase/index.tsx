@@ -23,10 +23,12 @@ import {
   ContainerValidate,
   Diviser,
   FormOfPayment,
+  Gratters,
   HeaderModal,
   InfoMotorcycle,
   InputArea,
   Main,
+  ModalFinishPurchase,
   ModalInstallment,
   ModalPayment,
   NameMotorcycle,
@@ -140,6 +142,7 @@ const Purchase = () => {
     CreditCard: require('../../assets/icons/CreditCard.png'),
     BoletoBankario: require('../../assets/icons/BoletoBankario.png'),
     Card: require('../../assets/icons/Card.png'),
+    Approval: require('../../assets/icons/Approval.png'),
   };
 
   let data = new Date();
@@ -151,6 +154,37 @@ const Purchase = () => {
   let yaer = data.getFullYear();
 
   let currentDay = day + '/' + month + '/' + yaer;
+
+  const FinalizePurchase = () => {
+    return (
+      <Modal transparent animationType="fade">
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: 'rgba(0, 0, 0, 0.3)',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <ModalFinishPurchase>
+            <Image
+              source={icons.Approval}
+              style={{width: 100, height: 100, resizeMode: 'contain'}}
+            />
+            <Gratters>PARÁBENS</Gratters>
+            <Text
+              style={{
+                color: theme.colors.black,
+                textAlign: 'center',
+                paddingBottom: 10,
+                fontSize: 15,
+              }}>
+              Sua compra acaba de ser finalizada com sucesso!
+            </Text>
+          </ModalFinishPurchase>
+        </View>
+      </Modal>
+    );
+  };
 
   useEffect(() => {
     getData();
@@ -497,6 +531,7 @@ const Purchase = () => {
               </ModalInstallment>
             </View>
           </Modal>
+          <FinalizePurchase />
         </Container>
       )}
     </>

@@ -125,3 +125,19 @@ export const PurchaseData = styled.View`
   border-radius: 8px;
   background-color: #f4f4f4;
 `;
+
+export const ModalFinishPurchase = styled.View`
+  justify-content: center;
+  align-items: center;
+  width: 325px;
+  padding: 30px 15px;
+  border-radius: 8px;
+  background-color: #fafafa;
+`;
+
+export const Gratters = styled.Text`
+  font-size: 20px;
+  padding: 10px 0px;
+  font-weight: bold;
+  color: #54b175;
+`;
