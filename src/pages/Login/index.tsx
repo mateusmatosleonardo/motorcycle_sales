@@ -35,7 +35,6 @@ type LoginScreenProps = NavigationProp<RootStackParamList, 'Home'>;
 
 const Login: React.FC = () => {
   const navigation = useNavigation<LoginScreenProps>();
-  const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [hidePass, setHidePass] = React.useState<boolean>(true);
   const [error, setError] = React.useState<string>('');
   const validateSchema = yup.object({
@@ -45,26 +44,11 @@ const Login: React.FC = () => {
   const {
     control,
     handleSubmit,
-    setValue,
     getValues,
     formState: {errors, isSubmitting},
   } = useForm({
     resolver: yupResolver(validateSchema),
   });
-
-  // function handleSignIn(data: any) {
-  //   if (data.email === 'me2@test.com' && data.password === '87654321') {
-  //     setIsLoading(true);
-  //     setTimeout(() => {
-  //       setIsLoading(false);
-  //       navigation.navigate('Home');
-  //       setValue('email', '', {shouldValidate: true});
-  //       setValue('password', '', {shouldValidate: true});
-  //     }, 1200);
-  //   } else {
-  //     setError('E-mail ou senha inválidos!');
-  //   }
-  // }
 
   function handleSignIn(): Promise<void> {
     const {email, password} = getValues();

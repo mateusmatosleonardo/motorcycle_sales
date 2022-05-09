@@ -19,5 +19,4 @@ export const theme = {
     average: 16,
     big: 18,
   },
-  // adding sizes the fonts
 };
